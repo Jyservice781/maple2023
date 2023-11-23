@@ -1,0 +1,325 @@
+body{
+    overflow: hidden;
+}
+figure{
+    position: fixed;  top:0; left: 0;
+    width: 100%; height: 100%;
+    z-index: -500;
+}
+figure img{
+    width: 100%; height: 100%;
+
+}
+/* dim */
+span.dim{
+    position: absolute;
+    top: 0; left: 0;
+    z-index: 1;
+    display: block;
+    width: 100vw; height: 100vh;
+    background-color: rgba(0, 0, 0, .4);
+}
+section{
+    position: fixed; top: 50%; left: 50%;
+    width: 1500px; 
+    height: 800px;
+    transform: translate(-50%,-50%); 
+    border-radius: 90px;
+    background: rgba( 255, 255, 255, 0.35 );
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+    backdrop-filter: blur( 4px );
+    -webkit-backdrop-filter: blur( 4px );
+    border-radius: 10px;
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
+}
+
+/* com_video */
+section video{
+    position: fixed; top: 0; left: 0;
+    z-index: -400;
+    width: 100%; height: 100%;
+    object-fit: contain;
+    opacity: 0;
+    transition: all .5s;
+}
+/* on 클래스 붙었을때 */
+section .vid1.on{
+    position: fixed; top: 0; left: 0;
+    width: 100%; height: 100%;
+    object-fit: cover;
+    opacity: 1;
+}
+section .vid2.on{
+    position: fixed; top: 0; left: 0;
+    width: 100%; height: 100%;
+    object-fit: cover;
+    opacity: 1;
+}
+section .vid3.on{
+    position: fixed; top: 0; left: 0;
+    width: 100%; height: 100%;
+    object-fit: cover;
+    opacity: 1;
+}
+
+/* icon----------- */
+.icon{
+    position: fixed;
+    top: 30px;
+    right: 60px;
+    z-index: 9999;
+}
+.icon i{
+    font-size: 30px;
+    color: #ccc;
+    margin-right: 10px;
+    cursor: pointer;
+    transform: scale(1);
+    transition: all .2s;
+}
+/* icon__ hover활성화 */
+.icon i:hover{
+    color: #fff;
+    transform: scale(1.2);
+}
+.logo{
+    position: fixed; 
+    top: 50px;
+    left: 60px;
+    z-index: 9999;
+}
+/* header */
+.header{
+    width: 300px;
+    height: 100vh;
+    background-color:rgba(0, 0, 0, .6); 
+    position: relative;
+    z-index: 50;
+}
+/* 1depth */
+.gnb{
+    position: absolute;
+    top: 200px; left: 66px;
+}
+.gnb::after{
+    content: '';
+    position: absolute;
+    top: 30px; right: -31px;
+    z-index: -10;
+    width: 1px;
+    height: 266px;
+    background-color: #fff;
+}
+.gnb>li{
+    margin-bottom: 20px;
+    padding: 20px 0;
+    box-sizing: border-box;
+    position: relative;
+}
+.gnb>li>a{
+    display: block;
+    color: #fff;
+    font-size: 20px;
+    font-family: 'Noto Serif KR', serif;
+    transition: all .2s;
+}
+.gnb>li:hover>a{
+    color: #444;
+}
+.gnb>li::after{
+    content: '';
+    width: 10px; height: 10px; 
+    background-color: #fff;
+    margin-bottom: 5px;
+    margin-left: 50px;
+    position: absolute;
+    top: 28px;
+    right: -36px;
+    transform: rotate(45deg);
+    transition: all .5s;
+}
+.gnb>li:hover::after{
+    background-color: #444;
+}
+.gnb>li>ul{
+  position: absolute; 
+  top: 0; left: 132px;
+  transition: all .5s;
+  transform: translateX(-40px);
+  opacity: 0;
+}
+.gnb>li>ul>li{
+    padding: 5px;
+    width: 92px;
+    background-color:rgba(255, 255, 255, .5)
+}
+.gnb>li>ul>li>a{
+    display: block;
+    color: #fff;
+    font-family: 'Noto Serif KR', serif;
+    font-size: 16px;
+    text-align: center;
+}
+.gnb>li>ul>li>a::after{
+    content: '';
+    color: #fff;
+}
+/* hover */
+.gnb>li:hover>ul{
+   opacity: 1;
+   transform: translateX(0);
+}
+/* 백그라운드 */
+.bg{
+    width: 800px; height: 100vh;
+    transform: skew(-45deg);
+    background-color: rgba(255, 255, 255, .2);
+    position:absolute;
+    top: 0; right: -550px;
+    z-index: 10;
+}
+/* ------------캐릭터 영역 ---------------*/
+.ch{
+    position: absolute;
+    top: 0; right: 0;
+    z-index: 1000;
+}
+.ch>ul>li{
+    position: fixed;
+    top: 150px; right: 150px;
+    transition: all .5s;
+    opacity: 0;   
+}
+.ch li img{
+    width: 600px;
+    height: auto;
+    transition: all .5s;
+}
+.ch li .ch1{ 
+    transform: scale(0.23) translateX(-350px);
+}
+.ch li .ch2{
+    transform: scale(0.8) translateX(-200px);
+}
+.ch li .ch3{
+    transform: scale(0.5) translateX(300px);
+}
+.ch li.on{
+  opacity: 1;
+}
+.ch li.on .ch1{
+    transform: scale(1) translateX(0);
+}
+.ch li.on .ch2{
+    transform: scale(1) translateX(0);
+}
+.ch li.on .ch3{
+    transform: scale(1) translateX(0);
+}
+/* 캐릭터 선택 버튼*/
+.btn_list{
+    position: absolute; 
+    bottom: 64px; left: 314px;
+    display: flex;
+    z-index: 9999;
+}
+.btn_list>li{
+    margin: 0 5px;
+    cursor: pointer;
+    width: 136px;
+    height: 128px;
+}
+
+.btn_list>li:nth-child(1){background: url(../img/charWrap.png) no-repeat -9px -495px;}
+.btn_list>li:nth-child(2){background: url(../img/charWrap.png) no-repeat -9px -332px;}
+.btn_list>li:nth-child(3){background: url(../img/charWrap.png) no-repeat -182px -332px;}
+
+.btn_list>li:nth-child(1).on{background: url(../img/charWrap.png) no-repeat  -9px -169px;}
+.btn_list>li:nth-child(2).on{background: url(../img/charWrap.png) no-repeat  -9px -6px;}
+.btn_list>li:nth-child(3).on{background: url(../img/charWrap.png) no-repeat -182px -6px;}
+/* title */
+.title{
+    position: fixed;
+    bottom: 420px; left: 340px;
+    z-index: 50;
+}
+.title>li{
+    width: auto;
+    position: absolute;
+    top: 0;left: 0;
+    transform: translateX(-50px);
+    transition: all .5s;
+    opacity: 0;
+}
+.title>li>p{
+    font-family: 'Diphylleia', serif;
+    font-size: 20px;
+    color: #fff;
+}
+.title>li>span{
+    font-size: 70px;
+    font-family: 'Black Ops One', cursive;
+    color: #fff;
+}
+.title>li.on{
+    opacity: 1;
+    transform: translateX(0);
+}
+.start_btn{
+    position: absolute;
+    bottom: 70px; right: 150px;
+    z-index: 9999;
+}
+
+.start_btn p{
+    width: 234px;
+    height: 234px;
+    background: url(../img/sub_game_str_bg.png) no-repeat center/cover;
+    transition: all .2s;
+    transform: scale(1) rotate(0);
+    cursor: pointer;
+}
+.start_btn:hover p{
+    transform: scale(1.2) rotate(720deg);
+}
+.start_btn:active p{
+    transform: scale(1) rotate(720deg);
+}
+/* value */
+.value{
+    position: relative;
+    bottom:184px; right: -946px;
+    transform: skew(-45deg);
+    z-index: 50;
+}
+.value li{
+    width: 423px;
+    height: 100px;
+    position: absolute;
+    top: 0; left: 0;
+    background-color:rgba(255, 255, 255, .2);
+    transform: translateX(500px);
+    opacity: 0;
+    transition: all .5s;
+}
+.value .tit{
+    transform: skew(45deg);
+    color:#fff;
+    padding: 8px 60px;
+}
+.tit>p{
+    font-family: 'Noto Serif KR', serif;
+    font-size: 14px;
+    color: #222;
+    margin-bottom: 5px;
+    font-weight: 900;
+}
+.tit>span{
+    display: block;
+    font-size: 16px;
+    font-family: 'Noto Serif KR', serif;
+}
+.value li.on{
+    transform: translateX(0);
+    opacity: 1;
+}
